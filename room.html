@@ -16,6 +16,7 @@
     </head>
     
     <body>
+
         <div id="room" class="content">
             <header>
                 <a href="./home.html">
@@ -64,14 +65,14 @@
                                 </div>
                             </div>
                             <footer class="actions">
-                                <div class="option">
+                                <a href="#" class="option">
                                     <img src="./assets/check.svg" alt="check">
                                     Marcar como lida
-                                </div>
-                                <div class="option">
+                                </a>
+                                <a href="#" class="option">
                                     <img src="./assets/trash.svg" alt="check">
                                     Excluir
-                                </div>
+                                </a>
                             </footer>
                         </div>
                         <div class="question-wrapper readed">
@@ -80,19 +81,34 @@
                                     <img src="./assets/grey-avatar.svg" alt="avatar">
                                 </div>
                                 <div class="user-question">
-                                    <p>Qual a diferença entre const, var e let no Javascript?</p>
+                                    <p>Winicius é legal! 😎</p>
                                 </div>
                             </div>
                             <footer class="actions">
-                                <div class="option">
+                                <a href="#" class="option">
                                     <img src="./assets/check.svg" alt="check">
                                     Pergunta lida
-                                </div>
+                                </a>
                             </footer>
                         </div>
                     </div>
                 </section>
             </main>
+        </div>
+
+        <div class="modal-wrapper">
+            <div class="modal">
+                <h2>Excluir pergunta</h2>
+                <form action="">
+                    <p>Tem certeza que você deseja excluir esta pergunta?</p>
+                    <label class="sr-only" for="pass">Inserir senha</label>
+                    <input type="password" id="pass">
+                    <div class="btn-actions">
+                        <div class="button grey">Cancelar</div>
+                        <button class="button red">Sim, excluir</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
