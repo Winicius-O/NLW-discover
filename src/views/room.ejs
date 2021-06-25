@@ -6,14 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS -->
-        <link rel="stylesheet" href="./styles/global.css">
-        <link rel="stylesheet" href="./styles/room.css">
-        <link rel="stylesheet" href="./styles/modal.css">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/room.css">
+        <link rel="stylesheet" href="/styles/modal.css">
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
         <!-- SCRIPTS -->
-        <script src="./scripts/main.js" defer type="module"></script>
+        <script src="/scripts/main.js" defer type="module"></script>
         <title>Sala - Rocket.Q</title>
     </head>
     
@@ -21,18 +21,18 @@
 
         <div id="room" class="content">
             <header>
-                <a href="./home.html">
-                    <img src="./images/logo.svg" alt="Rocket.Q logo">
+                <a href="/home.html">
+                    <img src="/images/logo.svg" alt="Rocket.Q logo">
                 </a>
                 
                 <div class="buttons-container">
-                    <div class="button outlined">
+                    <div class="button outlined" id="room-id" data-id="12345">
                         #12345
-                        <img src="./images/copy-icon.svg" alt="copy">
+                        <img src="/images/copy-icon.svg" alt="copy">
                     </div>
 
-                    <a class="button" href="./create-pass.html">
-                        <img src="./images/white-users-button-icon.svg" alt="">
+                    <a class="button" href="/create-pass.html">
+                        <img src="/images/white-users-button-icon.svg" alt="">
                         Criar sala
                     </a>
                 </div>
@@ -46,7 +46,7 @@
 
                         <footer>
                             <div>
-                                <img src="./images/lock.svg" alt="">
+                                <img src="/images/lock.svg" alt="">
                                 Esta pergunta é anônima
                             </div>
                             <button>Enviar</button>
@@ -60,19 +60,19 @@
                         <div class="question-wrapper">
                             <div class="upper-part">
                                 <div class="user-avatar">
-                                    <img src="./images/avatar.svg" alt="avatar">
+                                    <img src="/images/avatar.svg" alt="avatar">
                                 </div>
                                 <div class="user-question">
                                     <p>Qual a diferença entre const, var e let no Javascript?</p>
                                 </div>
                             </div>
                             <footer class="actions">
-                                <a href="#" class="option check">
-                                    <img src="./images/check.svg" alt="check">
+                                <a href="#" class="option check" data-id="2">
+                                    <img src="/images/check.svg" alt="check">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="option trash">
-                                    <img src="./images/trash.svg" alt="check">
+                                <a href="#" class="option trash" data-id="2">
+                                    <img src="/images/trash.svg" alt="check">
                                     Excluir
                                 </a>
                             </footer>
@@ -80,19 +80,19 @@
                         <div class="question-wrapper">
                             <div class="upper-part">
                                 <div class="user-avatar">
-                                    <img src="./images/avatar.svg" alt="avatar">
+                                    <img src="/images/avatar.svg" alt="avatar">
                                 </div>
                                 <div class="user-question">
                                     <p>O que é Typescript?</p>
                                 </div>
                             </div>
                             <footer class="actions">
-                                <a href="#" class="option check">
-                                    <img src="./images/check.svg" alt="check">
+                                <a href="#" class="option check" data-id="3">
+                                    <img src="/images/check.svg" alt="check">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="option trash">
-                                    <img src="./images/trash.svg" alt="check">
+                                <a href="#" class="option trash" data-id="3">
+                                    <img src="/images/trash.svg" alt="check">
                                     Excluir
                                 </a>
                             </footer>
@@ -100,19 +100,19 @@
                         <div class="question-wrapper">
                             <div class="upper-part">
                                 <div class="user-avatar">
-                                    <img src="./images/avatar.svg" alt="avatar">
+                                    <img src="/images/avatar.svg" alt="avatar">
                                 </div>
                                 <div class="user-question">
-                                    <p>O que é Javascript?</p>
+                                    <p>Você ja sabe quais as bases você precisa melhorar para alcançar o seu próximo nível com maestria? Definiu o seu foco e objetivo para seguir em frente? Estou curiosa e embasbacada com sua perseverança por ter alcançado a terceira aula e sei que vai continuar ate o fim, então responde ai pra gente!!</p>
                                 </div>
                             </div>
                             <footer class="actions">
-                                <a href="#" class="option check">
-                                    <img src="./images/check.svg" alt="check">
+                                <a href="#" class="option check" data-id="4">
+                                    <img src="/images/check.svg" alt="check">
                                     Marcar como lida
                                 </a>
-                                <a href="#" class="option trash">
-                                    <img src="./images/trash.svg" alt="check">
+                                <a href="#" class="option trash" data-id="4">
+                                    <img src="/images/trash.svg" alt="check">
                                     Excluir
                                 </a>
                             </footer>
@@ -120,7 +120,7 @@
                         <div class="question-wrapper readed">
                             <div class="upper-part">
                                 <div class="user-avatar">
-                                    <img src="./images/grey-avatar.svg" alt="avatar">
+                                    <img src="/images/grey-avatar.svg" alt="avatar">
                                 </div>
                                 <div class="user-question">
                                     <p>Winicius é legal! 😎</p>
@@ -128,7 +128,7 @@
                             </div>
                             <footer class="actions">
                                 <a href="#" class="option">
-                                    <img src="./images/check.svg" alt="check">
+                                    <img src="/images/check.svg" alt="check" data-id="1">
                                     Pergunta lida
                                 </a>
                             </footer>
@@ -141,13 +141,13 @@
         <div class="modal-wrapper hidden">
             <div class="modal">
                 <h2>Excluir pergunta</h2>
-                <form action="">
+                <form action="#" method="POST">
                     <p>Tem certeza que você deseja excluir esta pergunta?</p>
-                    <label class="sr-only" for="pass">Inserir senha</label>
-                    <input type="password" id="pass">
+                    <label class="sr-only" for="password">Inserir senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha...">
                     <div class="btn-actions">
                         <div class="button grey cancel">Cancelar</div>
-                        <button class="button red">Sim, excluir</button>
+                        <button class="button red">Confirmar</button>
                     </div>
                 </form>
             </div>
