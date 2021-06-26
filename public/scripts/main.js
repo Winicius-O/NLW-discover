@@ -26,9 +26,23 @@ function modalEventListener(className, trash = false){
 
             trash ? modalConfirmButton.classList.add('red') : modalConfirmButton.classList.remove('red');
             modal.open();
-        })
-    })
+        });
+    });
 }
+
+const roomCodeButton = document.querySelector('header .buttons-container .button.outlined');
+const clipboardTarget = document.querySelector('#clipboard');
+roomCodeButton.addEventListener('click', event => {
+    clipboardTarget.select()
+    clipboardTarget.setSelectionRange(0,5);
+    document.execCommand('copy');
+
+    roomCodeButton.innerHTML = 'Copiado! <img src="/images/copy-icon.svg" alt="copy">'
+});
+roomCodeButton.addEventListener('mouseout', event => {
+    const roomID = clipboardTarget.getAttribute("value");
+    roomCodeButton.innerHTML = `${roomID} <img src="/images/copy-icon.svg" alt="copy">`
+});
 
 modalEventListener('.actions a.option.check', false);
 modalEventListener('.actions a.option.trash', true);

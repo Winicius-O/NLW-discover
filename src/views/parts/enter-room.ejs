@@ -1,8 +1,8 @@
 <section>
     <h2>Entre como participante</h2>
-    <form>
+    <form action="/enter-room", method="POST">
         <label class="sr-only" for="room-code-id">código da sala</label>
-        <input id="room-code-id" type="text" placeholder="código da sala">
+        <input id="room-code-id" name="roomID" type="text" placeholder="código da sala">
         <button>
             <img src="./images/door-button-icon.svg" alt="enter room icon">
             Entrar na sala

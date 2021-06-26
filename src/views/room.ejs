@@ -20,18 +20,19 @@
     <body>
 
         <div id="room" class="content">
+            <input class="sr-only" id="clipboard" value="<%= roomID %>">
             <header>
-                <a href="/home.html">
+                <a href="/">
                     <img src="/images/logo.svg" alt="Rocket.Q logo">
                 </a>
                 
                 <div class="buttons-container">
-                    <div class="button outlined" id="room-id" data-id="12345">
-                        #12345
+                    <div class="button outlined" id="room-id" data-id="<%= roomID %>">
+                        #<%= roomID %>
                         <img src="/images/copy-icon.svg" alt="copy">
                     </div>
 
-                    <a class="button" href="/create-pass.html">
+                    <a class="button" href="/create-pass">
                         <img src="/images/white-users-button-icon.svg" alt="">
                         Criar sala
                     </a>
@@ -40,7 +41,7 @@
             <main>
                 <section class="question-form">
                     <h2>Faça sua pergunta</h2>
-                    <form action="">
+                    <form action="/question/create/<%= roomID %>" method="POST">
                         <label class="sr-only" for="question">O que você quer perguntar?</label>
                         <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
 
@@ -57,82 +58,48 @@
                 <section class="users-questions">
                     <h2 class="sr-only">Perguntas da comunidade</h2>
                     <div class="questions-content">
-                        <div class="question-wrapper">
-                            <div class="upper-part">
-                                <div class="user-avatar">
-                                    <img src="/images/avatar.svg" alt="avatar">
+
+                        <% questions.forEach(question => { %>
+                            <div class="question-wrapper">
+                                <div class="upper-part">
+                                    <div class="user-avatar">
+                                        <img src="/images/avatar.svg" alt="avatar">
+                                    </div>
+                                    <div class="user-question">
+                                        <p><%= question.question_content %></p>
+                                    </div>
                                 </div>
-                                <div class="user-question">
-                                    <p>Qual a diferença entre const, var e let no Javascript?</p>
-                                </div>
+                                <footer class="actions">
+                                    <a href="#" class="option check" data-id="<%= question.questionID %>" >
+                                        <img src="/images/check.svg" alt="check">
+                                        Marcar como lida
+                                    </a>
+                                    <a href="#" class="option trash" data-id="<%= question.questionID %>">
+                                        <img src="/images/trash.svg" alt="check">
+                                        Excluir
+                                    </a>
+                                </footer>
                             </div>
-                            <footer class="actions">
-                                <a href="#" class="option check" data-id="2">
-                                    <img src="/images/check.svg" alt="check">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="option trash" data-id="2">
-                                    <img src="/images/trash.svg" alt="check">
-                                    Excluir
-                                </a>
-                            </footer>
-                        </div>
-                        <div class="question-wrapper">
-                            <div class="upper-part">
-                                <div class="user-avatar">
-                                    <img src="/images/avatar.svg" alt="avatar">
+                        <% }) %>
+                        
+                        <% questionsReaded.forEach(question => { %>
+                            <div class="question-wrapper readed">
+                                <div class="upper-part">
+                                    <div class="user-avatar">
+                                        <img src="/images/grey-avatar.svg" alt="avatar">
+                                    </div>
+                                    <div class="user-question">
+                                        <p><%= question.question_content %></p>
+                                    </div>
                                 </div>
-                                <div class="user-question">
-                                    <p>O que é Typescript?</p>
-                                </div>
+                                <footer class="actions">
+                                    <a href="#" class="option">
+                                        <img src="/images/check.svg" alt="check" data-id="<%= question.questionID %>">
+                                        Pergunta lida
+                                    </a>
+                                </footer>
                             </div>
-                            <footer class="actions">
-                                <a href="#" class="option check" data-id="3">
-                                    <img src="/images/check.svg" alt="check">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="option trash" data-id="3">
-                                    <img src="/images/trash.svg" alt="check">
-                                    Excluir
-                                </a>
-                            </footer>
-                        </div>
-                        <div class="question-wrapper">
-                            <div class="upper-part">
-                                <div class="user-avatar">
-                                    <img src="/images/avatar.svg" alt="avatar">
-                                </div>
-                                <div class="user-question">
-                                    <p>Você ja sabe quais as bases você precisa melhorar para alcançar o seu próximo nível com maestria? Definiu o seu foco e objetivo para seguir em frente? Estou curiosa e embasbacada com sua perseverança por ter alcançado a terceira aula e sei que vai continuar ate o fim, então responde ai pra gente!!</p>
-                                </div>
-                            </div>
-                            <footer class="actions">
-                                <a href="#" class="option check" data-id="4">
-                                    <img src="/images/check.svg" alt="check">
-                                    Marcar como lida
-                                </a>
-                                <a href="#" class="option trash" data-id="4">
-                                    <img src="/images/trash.svg" alt="check">
-                                    Excluir
-                                </a>
-                            </footer>
-                        </div>
-                        <div class="question-wrapper readed">
-                            <div class="upper-part">
-                                <div class="user-avatar">
-                                    <img src="/images/grey-avatar.svg" alt="avatar">
-                                </div>
-                                <div class="user-question">
-                                    <p>Winicius é legal! 😎</p>
-                                </div>
-                            </div>
-                            <footer class="actions">
-                                <a href="#" class="option">
-                                    <img src="/images/check.svg" alt="check" data-id="1">
-                                    Pergunta lida
-                                </a>
-                            </footer>
-                        </div>
+                        <% }) %>
                     </div>
                 </section>
             </main>

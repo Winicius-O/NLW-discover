@@ -5,12 +5,13 @@ const initDb = {
         const db = await Database();
 
         await db.exec(`CREATE TABLE rooms (
-            id INTEGER PRIMARY KEY,
+            ID INTEGER PRIMARY KEY,
             pass TEXT
             )`);
 
         await db.exec(`CREATE TABLE questions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            roomID INTEGER,
+            questionID INTEGER PRIMARY KEY AUTOINCREMENT,
             question_content TEXT,
             readed INTEGER
         )`);
